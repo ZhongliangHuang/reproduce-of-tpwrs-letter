@@ -1,0 +1,320 @@
+{
+  "config": {
+    "name": "ae_informed_rocof_fit",
+    "base_mva": 100.0,
+    "base_frequency_hz": 50.0,
+    "line_x_scale": 0.4,
+    "disturbance_load_bus": 50,
+    "disturbance_mw": 1200.0,
+    "duration_s": 20.0,
+    "n_points": 2001,
+    "governor_gamma": 0.2,
+    "governor_tau_s": 0.75,
+    "governor_gain_scale": 0.9,
+    "droop_R": 0.05,
+    "inertia_scale": 1.05,
+    "damping_pu_fraction": 0.02,
+    "load_damping_fraction": 0.01,
+    "min_load_for_mu_mw": 10.0,
+    "north_corridor_scale": 0.55,
+    "north_edges": [
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        30
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        30,
+        17
+      ],
+      [
+        26,
+        30
+      ],
+      [
+        30,
+        38
+      ]
+    ],
+    "clusters": [
+      {
+        "hosts": [
+          8,
+          10,
+          12
+        ],
+        "transformer_x_mult": 1.25,
+        "inertia_mult": 1.6,
+        "damping_mult": 0.9,
+        "governor_gain_mult": 0.42,
+        "tau_mult": 2.0
+      },
+      {
+        "hosts": [
+          46
+        ],
+        "transformer_x_mult": 0.95,
+        "inertia_mult": 0.85,
+        "damping_mult": 1.0,
+        "governor_gain_mult": 1.4,
+        "tau_mult": 0.75
+      },
+      {
+        "hosts": [
+          49
+        ],
+        "transformer_x_mult": 0.72,
+        "inertia_mult": 0.24,
+        "damping_mult": 1.1,
+        "governor_gain_mult": 3.0,
+        "tau_mult": 0.4
+      },
+      {
+        "hosts": [
+          54,
+          55,
+          56
+        ],
+        "transformer_x_mult": 0.85,
+        "inertia_mult": 2.8,
+        "damping_mult": 1.2,
+        "governor_gain_mult": 1.9,
+        "tau_mult": 0.7
+      },
+      {
+        "hosts": [
+          31,
+          32,
+          34,
+          36,
+          40,
+          42
+        ],
+        "transformer_x_mult": 1.0,
+        "inertia_mult": 1.0,
+        "damping_mult": 1.0,
+        "governor_gain_mult": 1.15,
+        "tau_mult": 0.9
+      }
+    ],
+    "generator_fleet": [
+      {
+        "name": "TB6",
+        "count": 27,
+        "capacity_mw": 667.0,
+        "inertia_s": 6.0,
+        "xdp": 0.041,
+        "deadband_hz": 0.033,
+        "delay_s": 0.5
+      },
+      {
+        "name": "TC6",
+        "count": 9,
+        "capacity_mw": 667.0,
+        "inertia_s": 8.0,
+        "xdp": 0.039,
+        "deadband_hz": 0.033,
+        "delay_s": 0.5
+      },
+      {
+        "name": "TB10",
+        "count": 5,
+        "capacity_mw": 1050.0,
+        "inertia_s": 10.0,
+        "xdp": 0.024,
+        "deadband_hz": 0.033,
+        "delay_s": 0.5
+      },
+      {
+        "name": "TC10",
+        "count": 2,
+        "capacity_mw": 1050.0,
+        "inertia_s": 10.6,
+        "xdp": 0.021,
+        "deadband_hz": 0.033,
+        "delay_s": 0.5
+      },
+      {
+        "name": "TG3",
+        "count": 11,
+        "capacity_mw": 300.0,
+        "inertia_s": 9.0,
+        "xdp": 0.065,
+        "deadband_hz": 0.033,
+        "delay_s": 0.0
+      }
+    ]
+  },
+  "system": {
+    "load_buses": 118,
+    "generator_side_buses": 54,
+    "state_order": 162,
+    "base_mva": 100.0
+  },
+  "achieved_metrics": {
+    "coi_nadir_hz": -0.0958501934554509,
+    "coi_final_hz": -0.0885004300984512,
+    "coi_local_to_global_peak_ratio": 14.013221911765871,
+    "bus08_nadir_hz": -0.11699010566315411,
+    "bus09_nadir_hz": -0.1212924494768082,
+    "bus48_nadir_hz": -0.1577758130480694,
+    "bus49_nadir_hz": -0.15610778594697636,
+    "bus08_rocof0_hz_per_s": -0.03258563020162324,
+    "bus09_rocof0_hz_per_s": -0.025843825374432347,
+    "bus48_rocof0_hz_per_s": -1.6933359420744156,
+    "bus49_rocof0_hz_per_s": -1.8267897787138436
+  },
+  "top10_abs_rocof_buses": [
+    {
+      "bus": 49,
+      "rocof0_hz_per_s": -1.8267897787138436
+    },
+    {
+      "bus": 48,
+      "rocof0_hz_per_s": -1.6933359420744156
+    },
+    {
+      "bus": 50,
+      "rocof0_hz_per_s": -1.5374296482299616
+    },
+    {
+      "bus": 47,
+      "rocof0_hz_per_s": -1.4585106402120702
+    },
+    {
+      "bus": 45,
+      "rocof0_hz_per_s": -1.2901092847103224
+    },
+    {
+      "bus": 46,
+      "rocof0_hz_per_s": -1.1938750485129928
+    },
+    {
+      "bus": 51,
+      "rocof0_hz_per_s": -1.186623084411101
+    },
+    {
+      "bus": 52,
+      "rocof0_hz_per_s": -1.0990878180671182
+    },
+    {
+      "bus": 44,
+      "rocof0_hz_per_s": -1.0940798866712962
+    },
+    {
+      "bus": 57,
+      "rocof0_hz_per_s": -1.0218145221017663
+    }
+  ],
+  "top10_lowest_nadir_buses": [
+    {
+      "bus": 55,
+      "nadir_hz": -0.1777860652146452
+    },
+    {
+      "bus": 56,
+      "nadir_hz": -0.17479439562404664
+    },
+    {
+      "bus": 54,
+      "nadir_hz": -0.17413498423695384
+    },
+    {
+      "bus": 46,
+      "nadir_hz": -0.173797860259218
+    },
+    {
+      "bus": 53,
+      "nadir_hz": -0.16605917465609704
+    },
+    {
+      "bus": 58,
+      "nadir_hz": -0.16135874811420792
+    },
+    {
+      "bus": 57,
+      "nadir_hz": -0.15854086527156314
+    },
+    {
+      "bus": 52,
+      "nadir_hz": -0.15793876964884707
+    },
+    {
+      "bus": 48,
+      "nadir_hz": -0.1577758130480694
+    },
+    {
+      "bus": 51,
+      "nadir_hz": -0.1572898848078155
+    }
+  ],
+  "top10_indicator_buses": [
+    {
+      "bus": 49,
+      "indicator": 0.0030998190025854954
+    },
+    {
+      "bus": 55,
+      "indicator": 0.0030443080454492567
+    },
+    {
+      "bus": 56,
+      "indicator": 0.003005260826819281
+    },
+    {
+      "bus": 54,
+      "indicator": 0.0030011057162032894
+    },
+    {
+      "bus": 50,
+      "indicator": 0.002966551909941187
+    },
+    {
+      "bus": 48,
+      "indicator": 0.002961293417534487
+    },
+    {
+      "bus": 53,
+      "indicator": 0.00293898185578232
+    },
+    {
+      "bus": 58,
+      "indicator": 0.0029140793637447257
+    },
+    {
+      "bus": 57,
+      "indicator": 0.0029046951448840025
+    },
+    {
+      "bus": 52,
+      "indicator": 0.002900592975557722
+    }
+  ]
+}
